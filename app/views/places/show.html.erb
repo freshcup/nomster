@@ -17,14 +17,14 @@
       var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
+        zoom: 12,
         center: myLatLng
       });
 
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
+        title: 'Sushi!'
       });
     }
 
@@ -46,3 +46,9 @@
     <% end %>
   </div>
 </div>
+<div class="clear"></div>
+  <%= simple_form_for @comment, url: '#' do |f| %>
+    <%= f.input :message %>
+    <%= f.input :rating %>
+    <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+  <% end %>
