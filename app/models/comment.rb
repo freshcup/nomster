@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
 
 
     RATINGS = {
-    '★': '1_star',
+    'One Star': '1_star',
     '★★': '2_stars',
     '★★★': '3_stars',
     '★★★★': '4_stars',
