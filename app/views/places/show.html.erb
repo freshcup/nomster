@@ -97,9 +97,9 @@
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
+<% end %>
 
 
-<!-- PhotoModal -->
 <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -126,23 +126,24 @@
 
 <div class="col-10 offset-1">
     <h1 class="float-left">Photos</h1>
-    <!-- Button trigger Photo modal -->
     <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
       Add a Photo
     </button>
 </div>
 <div class="clear"></div>
+
 <div class="row">
-  <div class="col-12 col-sm-6">
-    <blockquote>
-      <% @place.photos.each do |photo| %>
-      <%= image_tag photo.picture.url %>
-      <%= photo.caption %>
-      <% end %>
-    </blockquote>
-    </div>
+    <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture.url %>
+    <%= photo.caption %>
   <% end %>
 </div>
+
+
+
+
+
+ 
 
  
 
