@@ -45,6 +45,5 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-
 end
 
