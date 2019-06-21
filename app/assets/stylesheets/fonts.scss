@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'billionthine_personal_use_oRg';
-    src: url('fonts/billionthine.woff2') format('woff2'),
-         url('fonts/billionthine.woff') format('woff');
+    src: font-url(asset_path('billionthine.woff2')) format('woff2'),
+         font-url(asset_path('billionthine.woff')) format('woff');
     font-weight: normal;
     font-style: normal;
 
