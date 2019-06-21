@@ -62,7 +62,7 @@
 </div>
  <% end %>
   <div class="boxbox col-10 offset-1">
-   <%= will_paginate @places, renderer: BootstrapPagination::Rails %>
+   <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
    <br />
   </div>
 
