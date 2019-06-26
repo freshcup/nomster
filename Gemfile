@@ -81,5 +81,4 @@ gem 'devise'
 gem 'geocoder'
 gem "figaro"
 gem "carrierwave"
-gem 'mini_magick'
 gem 'fog-aws'
