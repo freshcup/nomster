@@ -5,20 +5,18 @@
     <br/>
     <p><%= @place.description %></p>
 
-
-
- <% @place.photos.each do |photo| %>
-<div class="col-10 offset-1">
-   <div class="row">
+  <% if @place.photos.present? %>
+   <H1>Photos:</H1><br />
+     <% @place.photos.each do |photo| %>
      <%= image_tag photo.picture.url %>
       </br />
     <%= photo.caption %>
-  </div>
+    <% end %>
+  <% end %>
 </div>
-<% end %>
 
-
-
+ <div class="boxbox col-10 offset-1">
+<H1>Map</H1><br />
   <% if @place.latitude.present? && @place.longitude.present? %>
       <script>
       function initMap() {
@@ -118,10 +116,10 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
       </div>
-      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
-          <%= f.input :picture %>
-          <%= f.input :caption %>
+          <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+            <%= f.input :picture %>
+            <%= f.input :caption %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
