@@ -5,17 +5,16 @@
     <br/>
     <p><%= @place.description %></p>
 
-  <% if @place.photos.present? %>
-   <H1>Photos:</H1><br />
-     <% @place.photos.each do |photo| %>
-     <%= image_tag photo.picture.url %>
-      </br />
-    <%= photo.caption %>
-    <% end %>
-  <% end %>
-</div>
+      <div class="float-right">
+      
+          <% if current_user && current_user == @place.user %>
+          <%= link_to 'Add a Photo', '#', data: {toggle: 'modal', target: '#photoModal'}, class: 'btn btn-primary' %>
+          <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+          <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+          <% end %>
+      </div>
+<div class="">
 
- <div class="boxbox col-10 offset-1">
 <H1>Map</H1><br />
   <% if @place.latitude.present? && @place.longitude.present? %>
       <script>
@@ -29,7 +28,6 @@
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Hello World!'
         });
         }
       </script>
@@ -43,17 +41,18 @@
     <br />
     <br />
     
-  <div class="float-right">
-      
-    <% if current_user && current_user == @place.user %>
-    <%= link_to 'Add a Photo', '#', data: {toggle: 'modal', target: '#photoModal'}, class: 'btn btn-primary' %>
-    <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-    <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+
+
+
+  <% if @place.photos.present? %>
+   <H1>Photos:</H1><br />
+     <% @place.photos.each do |photo| %>
+     <%= image_tag photo.picture.url %>
+      </br />
+    <%= photo.caption %>
     <% end %>
-  </div>
-
-<div class="clear"></div>
-
+  <% end %>
+</div>
 
 
 <!-- Modal -->
