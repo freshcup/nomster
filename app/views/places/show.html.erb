@@ -42,10 +42,10 @@
     <br />
     
 
-<div class="boxbox">
+<div class="col-10 offset-1">
   <% if @place.photos.present? %>
    <H1>Photos:</H1><br />
-     <% @place.photos.each do |photo| %>
+       <% @place.photos.each do |photo| %>
      <%= image_tag photo.picture.url %>
       </br />
     <%= photo.caption %>
