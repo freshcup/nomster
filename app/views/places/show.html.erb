@@ -44,13 +44,13 @@
 
 <div class="col-10 offset-1">
   <H1>Photos:</H1><br />
-  <% if @place.photos.present? %>
+  
           <% @place.photos.each do |photo| %>
      <%= image_tag photo.picture.url %>
       </br />
     <%= photo.caption %>
     <% end %>
-  <% end %>
+  
 </div>
 
 
