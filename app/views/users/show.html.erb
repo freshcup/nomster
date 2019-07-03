@@ -15,9 +15,9 @@
 
 
 <br /><br />
-<h1 class="text-center">My Comments</h1>
+<h2 class="text-center">My Comments</h2>
 <br /><br />
-<div class="row">
+<div class="boxbox">
   <% @user.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
@@ -37,7 +37,7 @@
 <h2 class="text-center">My Places</h2>
 <br /><br />
 <% @user.places.each do |place| %>
-  <div class="boxbox col-10 offset-1">
+  <div class="boxbox">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br />
     <p><%= place.description %></p><br />
