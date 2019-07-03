@@ -46,7 +46,7 @@
   <H1>Photos:</H1><br />
   <% if @place.photos.present? %>
           <% @place.photos.each do |photo| %>
-         <%= link_to(image_tag(@photo.picture.thumb.url, alt: 'Image'), @photo.picture.url, target: '_blank') if @photo.picture? %>
+          <%= image_tag photo.picture.url %>
       </br />
     <%= photo.caption %>
     <% end %>
