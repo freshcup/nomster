@@ -14,11 +14,10 @@
   <div class="clear"></div>
 </div>
 
-<div class="col-12 col-sm-6">
-  <br /><br />
-  <h1 class="text-center">My Comments</h1>
-  <br /><br />
-  <div class="row">
+<br /><br />
+<h1 class="text-center">My Comments</h1>
+<br /><br />
+<div class="row">
   <% @user.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
@@ -30,18 +29,15 @@
         <small><%= comment.user.email %></small>
       </blockquote>
     </div>
-</div>
   <% end %>
+</div>
 
 <div class="clear"></div>
-
-<div class="col-12 col-sm-6">
-  <br /><br />
-  <h1 class="text-center">My Places</h1>
-  <br /><br />
-  <div class="row">
+<br /><br />
+<h2 class="text-center">My Places</h2>
+<br /><br />
 <% @user.places.each do |place| %>
-  <div class="booyah-box col-10 offset-1">
+  <div class="boxbox col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br />
     <p><%= place.description %></p><br />
@@ -49,7 +45,7 @@
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>
-</div>
+
     <% if place.comments.present? %>
       <div class="col-12">
         <blockquote>
@@ -63,5 +59,3 @@
     <% end %>
   </div>
 <% end %>
-
-</div>
